@@ -1,29 +1,30 @@
 package homework_gamelevel;
 
 public class Player {
-	static int levelCount = 0; // »ı¼ºµÈ player ÀÎ½ºÅÏ½ºÀÇ ¼ö¸¦ ÀúÀåÇÏ±â À§ÇÑ º¯¼ö
-	int levelNo;	// player ÀÎ½ºÅÏ½º °íÀ¯ÀÇ ³Ñ¹ö
+	//playerê°€ levelCount ëŒ€ì‹  GameLevelì„ ê°€ì§€ëŠ”ê±´ ì–´ë–¨ê¹Œìš”? getGameLevelì´ ì¢€ë” ê°„ë‹¨í•´ ì§ˆêº¼ ê°™ìŠµë‹ˆë‹¤.
+	static int levelCount = 0; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ player ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	int levelNo;	// player ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½
 	{
-		++levelCount;		// player ÀÎ½ºÅÏ½º°¡ »ı¼ºµÉ ¶§¸¶´Ù levelCount °ªÀ» 1¾¿ Áõ°¡½ÃÄÑ
-		levelNo = levelCount; // levelNo¿¡ ÀúÀåÇÑ´Ù.±×·¡¼­ °¢ ÀÎ½ºÅÏ½º¸¶´Ù ´Ù¸¥ °ª °¡Áü.
+		++levelCount;		// player ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ levelCount ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		levelNo = levelCount; // levelNoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	}
 
-	public void upgradeLevel(){ // ÇöÀç GameLeve(1~3)À» Ãâ·ÂÇÏ´Â ÇÔ¼ö
+	public void upgradeLevel(){ // ï¿½ï¿½ï¿½ï¿½ GameLeve(1~3)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 		System.out.println("========level " + getGameLevel() + " start==========");
 	}
 	
-	public int getGameLevel(){ // ÇöÀç GameLevel(1~3)À» ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+	public int getGameLevel(){ // ï¿½ï¿½ï¿½ï¿½ GameLevel(1~3)ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 		switch(levelCount){
 			case 1: return GameLevel_1.getInstance().levelOfGame;
 			case 2: return GameLevel_2.getInstance().levelOfGame;
 			case 3: return GameLevel_3.getInstance().levelOfGame;
-			default: System.out.println("GameLevelÀÇ ¹üÀ§°¡ 1~3À» ¹ş¾î³µ½À´Ï´Ù.");
+			default: System.out.println("GameLevelï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1~3ï¿½ï¿½ ï¿½ï¿½ï¿½î³µï¿½ï¿½ï¿½Ï´ï¿½.");
 					return 0;
 		}
 	}
 	
-	public void attack(GameLevel obj){ // attack()ÇÔ¼ö·Î °¢ ·¹º§ÀÇ °ø°İÀÌ ¹ß»ı
-		obj.play(); // Á¶»ó Å¬·¡½ºÀÇ template method¸¦ »ç¿ëÇÑ´Ù.
+	public void attack(GameLevel obj){ // attack()ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½
+		obj.play(); // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ template methodï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		System.out.println("========level " + getGameLevel() + " end============");
 		System.out.println();
 	}
